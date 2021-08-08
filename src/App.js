@@ -1,5 +1,5 @@
 import "./App.css";
-import Posts from "./components/Post";
+import Post from "./components/Post";
 
 const ANAKIN_IMAGE =
   "https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Anakin-Jedi.jpg/220px-Anakin-Jedi.jpg";
@@ -26,14 +26,12 @@ const postAuthor = [
   },
 ];
 
-function App() {
-  return (
-    <div className="App">
-      {postAuthor.map((post) => (
-        <Posts {...post} key={post.id} />
-      ))}
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    {postAuthor.map((post) => (
+      <Post {...post} key={post.name} />
+    ))}
+  </div>
+);
 
 export default App;
